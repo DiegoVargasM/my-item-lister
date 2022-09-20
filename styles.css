@@ -1,0 +1,21 @@
+.row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+#main-header {
+    background-color:seagreen;
+}
+
+#header-title {
+    margin-left: 15px;
+}
+
+#filter {
+    margin-right: 15px;
+    width: auto;
+    height: 23px;
+}
