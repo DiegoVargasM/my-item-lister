@@ -1,3 +1,7 @@
+body {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
 .row {
     display: flex;
     flex-direction: row;
@@ -18,4 +22,56 @@
     margin-right: 15px;
     width: auto;
     height: 23px;
+}
+
+#second-container {
+    padding: 10px 25px;
+}
+
+#main {
+    border-style: solid;
+    padding: 10px;
+    border-color:lightgrey;
+}
+
+#addForm,
+#items {
+    margin-top: -15px;
+}
+
+.list-group {
+    list-style-type: none;
+}
+
+.list-group-item {
+    border-style: solid;
+    border-color: lightgrey;
+    padding: 8px;
+    border-collapse: collapse;
+    margin-top: -3px;
+    display: flex;
+    justify-content: space-between;
+    margin-right: 20px;
+}
+
+.x-btn {
+    background-color: rgba(248, 32, 32, 0.877);
+    color: white;
+    border-radius: 3px;
+}
+
+.submit-btn {
+    background-color: rgba(163, 152, 152, 0.712);
+    width: 75px;
+}
+
+#item {
+    width: auto;
+    min-width: 250px;
+}
+
+.submit-btn,
+#item {
+    height: 25px;
+
 }
