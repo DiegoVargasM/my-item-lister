@@ -4,6 +4,9 @@ let itemList = document.getElementById("items");
 //Form submit event
 form.addEventListener("submit", addItem);
 
+//Delete item event
+itemList.addEventListener("click",removeItem);
+
 //Add item function
 function addItem(e) {
     //prevent sending a post or get request to the server,
@@ -36,4 +39,14 @@ function addItem(e) {
 
     //Append li to list
     itemList.appendChild(li);
+}
+
+//remove item function
+function removeItem(e) {
+    if (e.target.classList.contains("x-btn")) {
+        if (confirm("Are you sure?")) {
+            let li = e.target.parentElement;
+            itemList.removeChild(li);
+        }
+    }
 }
