@@ -13,63 +13,63 @@ filter.addEventListener("keyup", filterItems);
 
 //Add item function
 function addItem(e) {
-    //prevent sending a post or get request to the server,
-    //redirecting the current page to the server's response
-    e.preventDefault();
-    
-    //get input value
-    let newItem = document.getElementById("item").value;
+  //prevent sending a post or get request to the server,
+  //redirecting the current page to the server's response
+  e.preventDefault();
 
-    //create new li element
-    let li = document.createElement("li");
+  //get input value
+  let newItem = document.getElementById("item").value;
 
-    //add class
-    li.className = "list-group-item";
+  //create new li element
+  let li = document.createElement("li");
 
-    //add text node with input value
-    li.appendChild(document.createTextNode(newItem));
+  //add class
+  li.className = "list-group-item";
 
-    //Create delete button element
-    let deleteBtn = document.createElement("button");
-    
-    //Add classes to delete button
-    deleteBtn.className = "x-btn";
+  //add text node with input value
+  li.appendChild(document.createTextNode(newItem));
 
-    //Append text node
-    deleteBtn.appendChild(document.createTextNode("X"));
+  //Create delete button element
+  let deleteBtn = document.createElement("button");
 
-    //Append button to li
-    li.appendChild(deleteBtn);
+  //Add classes to delete button
+  deleteBtn.className = "x-btn";
 
-    //Append li to list
-    itemList.appendChild(li);
+  //Append text node
+  deleteBtn.appendChild(document.createTextNode("X"));
+
+  //Append button to li
+  li.appendChild(deleteBtn);
+
+  //Append li to list
+  itemList.appendChild(li);
 }
 
 //remove item function
 function removeItem(e) {
-    if (e.target.classList.contains("x-btn")) {
-        if (confirm("Are you sure?")) {
-            let li = e.target.parentElement;
-            itemList.removeChild(li);
-        }
+  if (e.target.classList.contains("x-btn")) {
+    if (confirm("Are you sure?")) {
+      let li = e.target.parentElement;
+      itemList.removeChild(li);
     }
+  }
 }
 
 //filter items function
 function filterItems(e) {
-    //convert text to lowercase
-    let text = e.target.value.toLowerCase();
-    
-    //Get all the elements in the list
-    let items = itemList.getElementsByTagName("li");
+  //convert text to lowercase
+  let text = e.target.value.toLowerCase();
 
-    //convert to an array
-    Array.from(items).forEach(function (item) {
-        let itemName = item.firstChild.textContent;
-        if (itemName.toLowerCase().indexOf(text) != -1) {
-            item.style.display = "block";
-        } else {
-            item.style.display = "none";
-        }
-    })
+  //Get all the elements in the list
+  let items = itemList.getElementsByTagName("li");
+
+  //convert to an array
+  Array.from(items).forEach(function (item) {
+    let itemName = item.firstChild.textContent;
+    if (itemName.toLowerCase().indexOf(text) != -1) {
+      item.style.display = "block";
+    } else {
+      item.style.display = "none";
+    }
+  });
 }
